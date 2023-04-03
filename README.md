@@ -6,6 +6,7 @@ Nuxt3
 + i18n
 + SVG-Support
 + OWID/IDS-Logo
++ Pinia
 
 Freies Template - CC0-Lizenz.
 

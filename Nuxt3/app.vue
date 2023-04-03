@@ -1,3 +1,15 @@
+<script setup>
+import { useCounterStore } from '@/stores/counter'
+
+const counter = useCounterStore()
+
+//counter.count++
+// with autocompletion ✨
+//counter.$patch({ count: counter.count + 1 })
+// or using an action instead
+//counter.increment()
+</script>
+
 <template>
   <v-app>
     <v-app-bar app theme="dark" class="d-print-none" style="z-index:999">
@@ -30,6 +42,15 @@
           <v-col>
             <div>
               {{ appDescription }}
+            </div>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <div>
+              <v-btn @click="counter.increment()" color="primary" dark>
+                {{ counter.count }}
+              </v-btn>
             </div>
           </v-col>
         </v-row>
