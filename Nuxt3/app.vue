@@ -33,6 +33,13 @@
             </div>
           </v-col>
         </v-row>
+        <v-row>
+          <v-col>
+            <div>
+              <v-btn @click="test">{{ count }}</v-btn>
+            </div>
+          </v-col>
+        </v-row>
       </v-container>
     </v-main>
 
@@ -71,6 +78,8 @@ export default {
       footerContact: null,
       footerImpressum: null,
       footerDsgvo: null,
+
+      count = 1
     }
   },
 
@@ -88,7 +97,8 @@ export default {
 
   methods: {
     test() {
-      alert("test");
+      
+      //this.$data.count = this.$store.counter.state.count;
     }
   }
 }

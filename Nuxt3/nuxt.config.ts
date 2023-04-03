@@ -22,6 +22,16 @@ export default defineNuxtConfig({
     },
     plugins: [svgLoader()]
    },
+   modules: [
+    '@pinia/nuxt',
+   ],
+    pinia: {
+      autoImports: [
+        // automatically imports `defineStore`
+        'defineStore', // import { defineStore } from 'pinia'
+        ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
+     ],
+   },
    runtimeConfig: {
     public:{
       appName: "OWID-Nuxt3-Template",

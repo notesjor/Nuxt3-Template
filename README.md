@@ -1,5 +1,6 @@
 # Nuxt3-Template
 Nuxt3 
++ Pinia 
 + Vuetify 
 + MDI 
 + Tailwind
