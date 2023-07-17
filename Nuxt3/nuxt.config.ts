@@ -20,7 +20,9 @@ export default defineNuxtConfig({
     define: {
       'process.env.DEBUG': false,
     },
-    plugins: [svgLoader()]
+    plugins: [svgLoader({
+      defaultImport: 'url',
+    })]
   },
   modules: ['@pinia/nuxt'],  
   runtimeConfig: {
