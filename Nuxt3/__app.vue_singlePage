@@ -15,7 +15,7 @@ const counter = useCounterStore()
     <v-app-bar app theme="dark" class="d-print-none" style="z-index:999">
       <div>
         <a :href="leftIconHref" target="_blank">
-          <img alt="Logo" src="./assets/logo_left.svg" style="min-height:40px; margin-left:10px"/>
+          <img alt="Logo" src="/logo_left.svg" style="min-height:40px; margin-left:10px"/>
         </a>
       </div>
 
@@ -23,7 +23,7 @@ const counter = useCounterStore()
 
       <div>
         <a :href="rightIconHref" target="_blank">
-          <img alt="Logo" src="./assets/logo_right.svg" style="min-height:70px"/>
+          <img alt="Logo" src="/logo_right.svg" style="min-height:70px"/>
         </a>
       </div>
     </v-app-bar>
