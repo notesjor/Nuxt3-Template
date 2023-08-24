@@ -40,3 +40,17 @@ npm run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+### This packages contains:
+
+- Nuxt 3 > Nuxt uses a new directory structure (pages / static assets / etc) please see: https://nuxt.com/docs/guide/directory-structure/pages
+- Vue / Vuetify 3
+- MDI-Icon Font: https://pictogrammers.com/library/mdi/
+- Tailwind (CSS): https://tailwindcss.com/
+- i18n - Translation Support
+- SVG-Support
+- IDS / OWID-Logos and default styles
+- Pinia (replacement for vuex) - https://pinia.vuejs.org/getting-started.html
+- Activ multi-page mode - https://nuxt.com/docs/guide/directory-structure/pages
+
+
