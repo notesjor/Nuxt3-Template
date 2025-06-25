@@ -8,14 +8,17 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+
   css: [
     'vuetify/lib/styles/main.sass',
     '@mdi/font/css/materialdesignicons.min.css',
     '~/assets/css/main.css'
   ],
+
   build: {
     transpile: ['vuetify'],
   },
+
   vite: {
     define: {
       'process.env.DEBUG': false,
@@ -24,7 +27,9 @@ export default defineNuxtConfig({
       defaultImport: 'url',
     })]
   },
-  modules: ['@pinia/nuxt'],  
+
+  modules: ['@pinia/nuxt'],
+
   runtimeConfig: {
     public: {
       appName: "OWID-Nuxt3-Template",
@@ -38,7 +43,10 @@ export default defineNuxtConfig({
       footerDsgvo: "https://www.owid.de/wb/owid/privacy.html"
     }
   },
+
   app: {
     baseURL: "/"
-  }
+  },
+
+  compatibilityDate: "2024-12-04"
 })

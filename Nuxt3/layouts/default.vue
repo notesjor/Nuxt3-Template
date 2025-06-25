@@ -1,82 +1,90 @@
 <template>
-    <v-app>
-      <v-app-bar app theme="dark" class="d-print-none" style="z-index:999">
+  <v-app>
+    <v-app-bar app theme="dark" class="d-print-none" style="z-index:999">
+      <div>
+        <a :href="leftIconHref" target="_blank">
+          <img alt="Logo" src="/logo_left.svg" style="min-height:40px; margin-left:10px" />
+        </a>
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <div>
+        <a :href="rightIconHref" target="_blank">
+          <img alt="Logo" src="/logo_right.svg" style="min-height:70px" />
+        </a>
+      </div>
+    </v-app-bar>
+    <v-main>
+      <v-container>
+        <slot />
+      </v-container>
+    </v-main>
+
+    <v-footer theme="dark"
+      style="z-index: 100; max-height: 80px; position: absolute; bottom: 0; width: 100%; padding-left:25px; display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 100%; gap: 0px 0px; grid-template-areas: 'left middle right';">
+      <div style="color:white; grid-area: left; margin-top: 20px; font-size: 12px;" v-if="!useMobileView">
+        <img alt="Logo" src="/owid-logo-dunkel.svg" style="max-height:15px; margin:-10px 0px 3px 0px" float="left" />
         <div>
-          <a :href="leftIconHref" target="_blank">
-            <img alt="Logo" src="/logo_left.svg" style="min-height:40px; margin-left:10px"/>
-          </a>
+          <a style="color: #fff" :href="footerContact">Kontakt</a>
+          &middot;
+          <a style="color: #fff" :href="footerDsgvo">Datenschutzhinweis</a>
+          &middot;
+          <a style="color: #fff" :href="footerImpressum">Impressum</a>
         </div>
-  
-        <v-spacer></v-spacer>
-  
         <div>
-          <a :href="rightIconHref" target="_blank">
-            <img alt="Logo" src="/logo_right.svg" style="min-height:70px"/>
-          </a>
+          &copy; Leibniz-Institut für Deutsche Sprache
         </div>
-      </v-app-bar>
-      <v-main>
-        <v-container>
-          <slot />          
-        </v-container>
-      </v-main>
-  
-      <v-footer theme="dark" style="max-height:64px">
-        <v-card class="flex" flat tile>
-          <v-card-text class="py-2" style="text-align:right">
-            <div style="display:inline-block">
-              {{ new Date().getFullYear() }} — <strong>{{ appName }}</strong>
-            </div>
-            <div style="display:inline-block">
-              <a :href="footerContact" style="margin-left:15px" v-if="footerContact != null && footerContact.length > 1">{{
-                $t("footer_Contact") }}</a>
-              <a :href="footerImpressum" style="margin-left:15px"
-                v-if="footerImpressum != null && footerImpressum.length > 1">{{ $t("footer_Impressum") }}</a>
-              <a :href="footerDsgvo" style="margin-left:15px" v-if="footerDsgvo != null && footerDsgvo.length > 1">{{
-                $t("footer_Dsgvo") }}</a>
-            </div>
-          </v-card-text>
-        </v-card>
-      </v-footer>
-    </v-app>
-  </template>
-  
-  <script>
-  export default {
-    name: "Index",
-    theme: { dark: false },
-    data() {
-      return {
-        appName: null,
-        appDescription: null,
-  
-        leftIconHref: null,
-        rightIconHref: null,
-  
-        footerContact: null,
-        footerImpressum: null,
-        footerDsgvo: null,
-      }
-    },
-  
-    mounted() {
-      this.appName = this.$config.public.appName;
-      this.appDescription = this.$config.public.appDescription;
-  
-      this.leftIconHref = this.$config.public.leftIconHref;
-      this.rightIconHref = this.$config.public.rightIconHref;
-  
-      this.footerContact = this.$config.public.footerContact;
-      this.footerImpressum = this.$config.public.footerImpressum;
-      this.footerDsgvo = this.$config.public.footerDsgvo;
-    },
-  
-    methods: {
-      test() {
-        alert("test");
-      }
+      </div>
+
+      <div style="grid-area: middle;"></div>
+
+      <div style="text-align: right; grid-area: right">
+        <a :href="rightIconHref" target="_blank">
+          <img alt="Logo" src="/logo_right.svg"
+            style="max-height:65px; min-height: 45px; min-width: 200px; margin-left: auto; " />
+        </a>
+      </div>
+    </v-footer>
+  </v-app>
+</template>
+
+<script>
+export default {
+  name: "Index",
+  theme: { dark: false },
+  data() {
+    return {
+      appName: null,
+      appDescription: null,
+
+      leftIconHref: null,
+      rightIconHref: null,
+
+      footerContact: null,
+      footerImpressum: null,
+      footerDsgvo: null,
+    }
+  },
+
+  mounted() {
+    this.appName = this.$config.public.appName;
+    this.appDescription = this.$config.public.appDescription;
+
+    this.leftIconHref = this.$config.public.leftIconHref;
+    this.rightIconHref = this.$config.public.rightIconHref;
+
+    this.footerContact = this.$config.public.footerContact;
+    this.footerImpressum = this.$config.public.footerImpressum;
+    this.footerDsgvo = this.$config.public.footerDsgvo;
+  },
+
+  methods: {
+    test() {
+      alert("test");
     }
   }
-  </script>
-  
-  <style></style>
+}
+</script>
+
+<style></style>
